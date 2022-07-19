@@ -17,31 +17,23 @@
     <button onclick="findChannels()">ADDDD</button>
 
     <!-- bootstrap -->
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script>
         function findChannels() {
 
-            /*$.ajax({
-                type: "get",
+            $.ajax({
+                type: 'POST',
                 url: 'https://slack.com/api/conversations.list',
-                dataType: "json",
-                beforeSend: function(xhr) {
-                    xhr.setRequestHeader("Authorization", "Bearer xoxb-3798952362547-3811203310086-nQS3olzBGLDELe6mkYO6vm0b");
-                },
+                dataType: 'text',
+				data: {
+					"token": "xoxb-3261799849602-3792226290294-V1dChuhE8Wrax99tkFILVOGK"
+				}, 
                 success: function(response) {
                     alert('' + response);
                 },
                 error: function() {
                     alert("Something went wrong please refresh the page and try again");
                 }
-            });*/
-
-            fetch('https://slack.com/api/conversations.list', {
-                headers: {
-                    "Authorization: Bearer xoxb-3798952362547-3811203310086-nQS3olzBGLDELe6mkYO6vm0b"
-                }
-            }).then(response => response.json()).then(json => {
-                let channels = json;
-                alert(channels);
             });
 
         }
