@@ -35,7 +35,7 @@
 
             fetch('https://slack.com/api/conversations.list', {
                 headers: {
-                    'Authorization': "Bearer xoxb-3798952362547-3811203310086-nQS3olzBGLDELe6mkYO6vm0b"
+                    "Authorization: Bearer xoxb-3798952362547-3811203310086-nQS3olzBGLDELe6mkYO6vm0b"
                 }
             }).then(response => response.json()).then(json => {
                 let channels = json;
