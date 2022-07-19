@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Achladokampos | An Unofficial Guide</title>
+</head>
+
+<body>
+
+    <span>Click here</span>
+    <button onclick="findChannels()">ADDDD</button>
+
+    <!-- bootstrap -->
+    <script>
+        function findChannels() {
+
+            $.ajax({
+                type: "get",
+                url: 'https://slack.com/api/conversations.list',
+                dataType: "json",
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("Authorization", "Bearer xoxb-3798952362547-3811203310086-nQS3olzBGLDELe6mkYO6vm0b");
+                },
+                success: function(response) {
+                    alert('' + response);
+                },
+                error: function() {
+                    alert("Something went wrong please refresh the page and try again");
+                }
+            });
+
+        }
+    </script>
+</body>
+
+</html>
